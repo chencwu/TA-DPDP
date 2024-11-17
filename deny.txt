@@ -1,0 +1,163 @@
+//printf("\n Four \n");
+//for (i = 0; i < n; i++)
+//{
+//	for (j = 0; j < s; j++)
+//	{
+//		if (com_channel_hex[i][j] == 1) {//出现单个wm 可以拨开第一层
+//			count = 0;
+//			for (int index_k = 0; index_k < WT_LENGTH; index_k++)
+//			{
+//				if (wt->page[index_k][1] == i
+//					&&
+//					wt->page[index_k][2] == j
+//					&&
+//					com_page_hex[wt->page[index_k][0]] > 0
+//					) {
+//					count++;
+//				}
+//			}
+//			for (int index_k = 0; index_k < WT_LENGTH; index_k++)
+//			{
+//				if (
+//					count == 1
+//					&&
+//					wt->page[index_k][1] == i
+//					&&
+//					wt->page[index_k][2] == j
+//					&&
+//					(com_page_hex[wt->page[index_k][0]] > 0)
+//					&&
+//					(com_row_hex[i] > 0)
+//					&&
+//					(com_column_hex[j] > 0)
+//					) {
+//					//cout << wt->page[index_k][0] << " " << wt->page[index_k][1] << " " << wt->page[index_k][2] << " " << endl;
+//					com_page_hex[wt->page[index_k][0]] = com_page_hex[wt->page[index_k][0]] - 1;
+//					com_column_hex[j] = com_column_hex[j] - 1;
+//					com_row_hex[i] = com_row_hex[i] - 1;
+//					com_channel_hex[i][j] = com_channel_hex[i][j] - 1;
+//					all_wm_number = all_wm_number - 1;
+//					wt->page[index_k][0] = -1;
+//					wt->page[index_k][1] = -1;
+//					wt->page[index_k][2] = -1;
+//				}
+//			}
+//		}
+//	}
+//}
+//printf("now water mark is %d\n", all_wm_number);
+//for (int int_k = 0; int_k < z; int_k++)
+//{
+//	if (com_page_hex[int_k] == 1) {//出现单层只有单个wm 可以拨开第二层
+//		count = 0;
+//		for (int index_k = 0; index_k < WT_LENGTH; index_k++)
+//		{
+//			if (
+//				wt->page[index_k][0] == int_k
+//				&&
+//				com_row_hex[wt->page[index_k][1]] > 0
+//				&&
+//				com_column_hex[wt->page[index_k][2]] > 0
+//				&&
+//				com_channel_hex[wt->page[index_k][1]][wt->page[index_k][2]] > 0
+//				)
+//			{
+//				count++;
+//			}
+//		}
+//		for (int index_k = 0; index_k < WT_LENGTH; index_k++)
+//		{
+//			if (wt->page[index_k][0] == int_k)
+//			{
+//				if (
+//					count == 1
+//					&&
+//					com_row_hex[wt->page[index_k][1]] > 0
+//					&&
+//					com_column_hex[wt->page[index_k][2]] > 0
+//					&&
+//					com_channel_hex[wt->page[index_k][1]][wt->page[index_k][2]] > 0
+//					) {
+//					//printf("water local[%d][%d][%d]\n", wt->page[index_k][0], wt->page[index_k][1], wt->page[index_k][2]);
+//					com_row_hex[wt->page[index_k][1]] = com_row_hex[wt->page[index_k][1]] - 1;
+//					com_column_hex[wt->page[index_k][2]] = com_column_hex[wt->page[index_k][2]] - 1;
+//					com_channel_hex[wt->page[index_k][1]][wt->page[index_k][2]] = com_channel_hex[wt->page[index_k][1]][wt->page[index_k][2]] - 1;
+//					all_wm_number = all_wm_number - 1;
+//					com_page_hex[int_k] = com_page_hex[int_k] - 1;
+//					wt->page[index_k][0] = -1;
+//					wt->page[index_k][1] = -1;
+//					wt->page[index_k][2] = -1;
+//				}
+//			}
+//		}
+//	}
+//}
+//printf("now water mark is %d\n", all_wm_number);
+/**********************************************************************************************************/
+//printf("\n four \n");
+//for (i = 0; i < n; i++)
+//{
+//	for (j = 0; j < s; j++)
+//	{
+//		//printf("com_channel_hex[%d][%d]:%x \n", i, j, com_channel_hex[i][j]);
+//		if (com_channel_hex[i][j] > 0) {//出现单个wm 可以拨开第一层
+//			for (int index_k = 0; index_k < WT_LENGTH; index_k++)
+//			{
+//				if (
+//					wt->page[index_k][1] == i
+//					&&
+//					wt->page[index_k][2] == j
+//					&&
+//					(com_page_hex[wt->page[index_k][0]] > 0)
+//					&&
+//					(com_row_hex[i] > 0)
+//					&&
+//					(com_column_hex[j] > 0)
+//					) {
+//					//cout << wt->page[index_k][0] << " " << wt->page[index_k][1] << " " << wt->page[index_k][2] << " " << endl;
+//					com_page_hex[wt->page[index_k][0]] = com_page_hex[wt->page[index_k][0]] - 1;
+//					com_column_hex[j] = com_column_hex[j] - 1;
+//					com_row_hex[i] = com_row_hex[i] - 1;
+//					com_channel_hex[i][j] = com_channel_hex[i][j] - 1;
+//					all_wm_number = all_wm_number - 1;
+//					wt->page[index_k][0] = -1;
+//					wt->page[index_k][1] = -1;
+//					wt->page[index_k][2] = -1;
+//				}
+//			}
+//		}
+//	}
+//}
+//printf("now water mark is %d\n", all_wm_number);
+
+
+//for (int int_k = 0; int_k < z; int_k++)
+//{
+//	if (com_page_hex[int_k] > 0) {//出现单层只有单个wm 可以拨开第二层
+//		for (int index_k = 0; index_k < WT_LENGTH; index_k++)
+//		{
+//			if (wt->page[index_k][0] == int_k)
+//			{
+//				if (
+//					com_page_hex[int_k] > 0
+//					&&
+//					com_row_hex[wt->page[index_k][1]] > 0
+//					&&
+//					com_column_hex[wt->page[index_k][2]] > 0
+//					&&
+//					com_channel_hex[wt->page[index_k][1]][wt->page[index_k][2]] > 0
+//					) {
+//					//printf("water local[%d][%d][%d]\n", wt->page[index_k][0], wt->page[index_k][1], wt->page[index_k][2]);
+//					com_row_hex[wt->page[index_k][1]] = com_row_hex[wt->page[index_k][1]] - 1;
+//					com_column_hex[wt->page[index_k][2]] = com_column_hex[wt->page[index_k][2]] - 1;
+//					com_channel_hex[wt->page[index_k][1]][wt->page[index_k][2]] = com_channel_hex[wt->page[index_k][1]][wt->page[index_k][2]] - 1;
+//					all_wm_number = all_wm_number - 1;
+//					com_page_hex[int_k] = com_page_hex[int_k] - 1;
+//					wt->page[index_k][0] = -1;
+//					wt->page[index_k][1] = -1;
+//					wt->page[index_k][2] = -1;
+//				}
+//			}
+//		}
+//	}
+//}
